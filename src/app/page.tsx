@@ -1,14 +1,11 @@
-import { Container } from "react-bootstrap";
+import { HeroSection } from "@/components/marketing/HeroSection";
+import { ServicesGrid } from "@/components/marketing/ServicesGrid";
 
 export default function HomePage() {
   return (
-    <Container className="py-5">
-      <h1 className="mb-3">Codim</h1>
-      <p className="lead">
-        Landing page apresentando a Codim, nossa oferta de desenvolvimento e
-        automações. Use este espaço para destacar hero, vitrine de serviços e
-        CTAs para briefing e contato.
-      </p>
-    </Container>
+    <>
+      <HeroSection />
+      <ServicesGrid />
+    </>
   );
 }

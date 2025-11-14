@@ -54,7 +54,7 @@ export function FeatureHighlights() {
         <Card.Title className="text-gradient mb-2">
           Roadmap público
         </Card.Title>
-        <Card.Text className="text-muted">
+        <Card.Text>
           Todos os cards abaixo podem ser mapeados direto para tabelas
           do Supabase para você adaptar ao seu produto.
         </Card.Text>
@@ -77,7 +77,7 @@ export function FeatureHighlights() {
                 <div className="d-flex justify-content-between align-items-start">
                   <div>
                     <h5 className="mb-1">{item.title}</h5>
-                    <p className="text-muted mb-0">{item.description}</p>
+                    <p className="mb-0">{item.description}</p>
                   </div>
                   <span className="badge rounded-pill badge-soft text-nowrap ms-3">
                     {item.status}

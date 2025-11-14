@@ -62,7 +62,7 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="glass-card p-4"
             >
-              <p className="text-uppercase text-muted mb-1 small">
+              <p className="text-uppercase mb-1 small">
                 Radar operacional
               </p>
               <h3 className="text-white">
