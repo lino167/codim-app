@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./globals.css";
 import { AppProviders } from "@/components/providers/AppProviders";
+import { CodimNavbar } from "@/components/layout/CodimNavbar";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,9 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Codim | Operações inteligentes para startups ágeis",
-  description:
-    "Plataforma da Codim para orquestrar dados, automações e squads com Supabase, React Query e Next.js.",
+  title: "Codim",
+  description: "Site institucional e plataforma da Codim.",
 };
 
 export default function RootLayout({
@@ -28,7 +28,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <AppProviders>{children}</AppProviders>
+        <AppProviders>
+          <CodimNavbar />
+          <main className="py-4">{children}</main>
+        </AppProviders>
       </body>
     </html>
   );
