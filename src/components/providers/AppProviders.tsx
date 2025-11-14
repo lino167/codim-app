@@ -1,12 +1,12 @@
 "use client";
 
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import {
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-// import { SupabaseProvider } from "./SupabaseProvider"; // TODO: ativar quando o provider estiver pronto
+// import { SupabaseProvider } from "./SupabaseProvider";
 
 type Props = {
   children: ReactNode;
@@ -25,6 +25,24 @@ export function AppProviders({ children }: Props) {
       }),
   );
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    const elements = document.querySelectorAll(".codim-reveal");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const content = (
     <QueryClientProvider client={queryClient}>
       {children}
@@ -32,7 +50,6 @@ export function AppProviders({ children }: Props) {
     </QueryClientProvider>
   );
 
-  // Quando o SupabaseProvider estiver pronto, basta encapsular `content`.
   // return <SupabaseProvider>{content}</SupabaseProvider>;
   return content;
 }

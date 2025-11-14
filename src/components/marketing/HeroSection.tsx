@@ -33,14 +33,15 @@ export function HeroSection() {
                 as={Link}
                 href="/portifolio"
                 className="codim-btn-primary codim-cta-pulse"
+                bsPrefix="codim-btn"
               >
                 Ver projetos
               </Button>
               <Button
                 as={Link}
                 href="/briefing"
-                variant="outline-light"
                 className="codim-btn-secondary"
+                bsPrefix="codim-btn"
               >
                 Contratar agora
               </Button>

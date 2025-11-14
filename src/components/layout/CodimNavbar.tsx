@@ -18,8 +18,8 @@ export function CodimNavbar() {
   const pathname = usePathname();
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg" sticky="top">
-      <Container>
+    <Navbar expand="lg" sticky="top" className="codim-navbar">
+      <Container fluid="lg">
         <Navbar.Brand as={Link} href="/">
           Codim
         </Navbar.Brand>
@@ -33,7 +33,9 @@ export function CodimNavbar() {
                 key={item.href}
                 as={Link}
                 href={item.href}
-                active={pathname === item.href}
+                className={`codim-nav-link ${
+                  pathname === item.href ? "active" : ""
+                }`}
               >
                 {item.label}
               </Nav.Link>

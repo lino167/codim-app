@@ -10,7 +10,7 @@ export function PageHeader({ title, subtitle, kicker }: PageHeaderProps) {
   return (
     <header className="mb-4">
       {kicker && (
-        <p className="text-uppercase text-danger fw-semibold mb-1 small">
+        <p className="codim-section-heading mb-1">
           {kicker}
         </p>
       )}

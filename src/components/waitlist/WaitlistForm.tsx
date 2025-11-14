@@ -6,27 +6,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { motion } from "framer-motion";
-import {
-  Alert,
-  Button,
-  Form,
-  Stack,
-} from "react-bootstrap";
+import { Button, Form, Stack } from "react-bootstrap";
 import { useSupabase } from "@/components/providers/SupabaseProvider";
 
 const waitlistSchema = z.object({
-  fullName: z
-    .string()
-    .min(3, "Informe pelo menos 3 caracteres.")
-    .max(80, "Nome muito longo."),
-  email: z.string().email("E-mail inválido."),
-  companySize: z.enum(["1-10", "11-50", "51-200", "+200"], {
-    required_error: "Selecione o porte da empresa.",
-  }),
-  painPoint: z
-    .string()
-    .min(10, "Compartilhe um pouco mais sobre o desafio.")
-    .max(280, "Limite de 280 caracteres."),
+  fullName: z.string().min(3).max(80),
+  email: z.string().email(),
+  companySize: z.enum(["1-10", "11-50", "51-200", "+200"]),
+  painPoint: z.string().min(10).max(280),
 });
 
 type WaitlistFormValues = z.infer<typeof waitlistSchema>;
@@ -55,7 +42,7 @@ export function WaitlistForm() {
     mutationFn: async (values: WaitlistFormValues) => {
       if (!supabase) {
         throw new Error(
-          "Supabase não configurado. Defina as variáveis de ambiente para enviar o formulário.",
+          "Supabase nao configurado. Adicione as variaveis de ambiente para ativar o formulario.",
         );
       }
 
@@ -66,10 +53,7 @@ export function WaitlistForm() {
         pain_point: values.painPoint,
       });
 
-      if (error) {
-        throw new Error(error.message);
-      }
-
+      if (error) throw new Error(error.message);
       return values.email;
     },
     onSuccess: (email) => {
@@ -85,11 +69,10 @@ export function WaitlistForm() {
 
   if (!isConfigured) {
     return (
-      <Alert variant="warning" className="mb-0">
-        Configure o Supabase definindo <code>NEXT_PUBLIC_SUPABASE_URL</code> e{" "}
-        <code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code> no arquivo <code>.env.local</code>{" "}
-        para habilitar este formulário.
-      </Alert>
+      <div className="codim-alert codim-alert-error">
+        Configure NEXT_PUBLIC_SUPABASE_URL e NEXT_PUBLIC_SUPABASE_ANON_KEY no
+        .env.local para habilitar o formulario.
+      </div>
     );
   }
 
@@ -101,6 +84,7 @@ export function WaitlistForm() {
           <Form.Control
             type="text"
             placeholder="Ex: Ana Martins"
+            className="codim-input"
             isInvalid={Boolean(errors.fullName)}
             {...register("fullName")}
           />
@@ -114,6 +98,7 @@ export function WaitlistForm() {
           <Form.Control
             type="email"
             placeholder="voce@startup.com"
+            className="codim-input"
             isInvalid={Boolean(errors.email)}
             {...register("email")}
           />
@@ -125,6 +110,7 @@ export function WaitlistForm() {
         <Form.Group controlId="companySize">
           <Form.Label>Tamanho da equipe</Form.Label>
           <Form.Select
+            className="codim-input"
             isInvalid={Boolean(errors.companySize)}
             {...register("companySize")}
           >
@@ -143,7 +129,8 @@ export function WaitlistForm() {
           <Form.Control
             as="textarea"
             rows={4}
-            placeholder="Conte como você orquestra dados, squads e rotinas hoje."
+            placeholder="Conte como voce orquestra dados, squads e rotinas hoje."
+            className="codim-input"
             isInvalid={Boolean(errors.painPoint)}
             {...register("painPoint")}
           />
@@ -154,7 +141,8 @@ export function WaitlistForm() {
 
         <Button
           type="submit"
-          className="btn-gradient w-100 py-2"
+          className="codim-btn-primary w-100"
+          bsPrefix="codim-btn"
           disabled={waitlistMutation.isPending}
         >
           {waitlistMutation.isPending
@@ -167,18 +155,17 @@ export function WaitlistForm() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <Alert variant="success" className="mb-0">
-              Recebemos seu interesse ({successEmail}). Em breve enviaremos o
-              passo a passo no seu e-mail.
-            </Alert>
+            <div className="codim-alert codim-alert-success">
+              Recebemos seu interesse ({successEmail}). Vamos responder em breve.
+            </div>
           </motion.div>
         )}
 
         {waitlistMutation.isError && (
-          <Alert variant="danger" className="mb-0">
+          <div className="codim-alert codim-alert-error">
             {waitlistMutation.error?.message ||
-              "Não foi possível registrar agora. Tente novamente em instantes."}
-          </Alert>
+              "Nao foi possivel registrar agora. Tente novamente em instantes."}
+          </div>
         )}
       </Stack>
     </Form>

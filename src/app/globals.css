@@ -1,13 +1,12 @@
 :root {
   color-scheme: dark;
-  --codim-primary: #d90429;
-  --codim-dark: #0a0a0a;
-  --codim-black: #050505;
+  --codim-red: #d90429;
+  --codim-black: #0a0a0a;
   --codim-white: #ffffff;
-  --codim-gray-100: #1a1a1a;
-  --codim-gray-200: #2a2a2a;
-  --codim-gray-500: #e0e0e0;
-  --codim-border: rgba(255, 255, 255, 0.08);
+  --codim-gray-dark: #111111;
+  --codim-gray: #1a1a1a;
+  --codim-gray-light: #e0e0e0;
+  --codim-border: rgba(224, 224, 224, 0.15);
   --codim-radius-lg: 1rem;
 }
 
@@ -21,8 +20,8 @@ body {
   font-family: var(--font-inter, "Inter"), "Segoe UI", system-ui, -apple-system,
     BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
-  background-color: var(--codim-dark);
-  color: var(--codim-white);
+  background-color: var(--codim-black);
+  color: var(--codim-gray-light);
   scroll-behavior: smooth;
 }
 
@@ -31,21 +30,54 @@ a {
   text-decoration: none;
 }
 
+.btn {
+  border-radius: var(--codim-radius-lg);
+  border: 1px solid rgba(224, 224, 224, 0.2);
+  background: transparent;
+  color: var(--codim-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+}
+
+.codim-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: var(--codim-radius-lg);
+  border: 1px solid rgba(224, 224, 224, 0.2);
+  background: transparent;
+  color: var(--codim-white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+}
+
 .codim-body {
   position: relative;
-  background: radial-gradient(circle at top left, rgba(217, 4, 41, 0.18), transparent 40%),
-    radial-gradient(circle at 80% 0%, rgba(217, 4, 41, 0.08), transparent 45%),
-    linear-gradient(170deg, var(--codim-black), #09090f 60%, #050505);
-  color: var(--codim-white);
+  background: radial-gradient(circle at top left, rgba(217, 4, 41, 0.2), transparent 45%),
+    radial-gradient(circle at 80% 0%, rgba(217, 4, 41, 0.12), transparent 55%),
+    linear-gradient(180deg, var(--codim-black), var(--codim-gray-dark));
 }
 
 .codim-body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
-  background-size: 150px 150px;
-  opacity: 0.25;
+  background-image: linear-gradient(
+      rgba(224, 224, 224, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(224, 224, 224, 0.03) 1px,
+      transparent 1px
+    );
+  background-size: 140px 140px;
+  opacity: 0.4;
   pointer-events: none;
 }
 
@@ -61,113 +93,129 @@ a {
   padding-bottom: 2.5rem;
 }
 
-.codim-section {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+.codim-navbar {
+  background: rgba(17, 17, 17, 0.9);
+  border-bottom: 1px solid rgba(224, 224, 224, 0.1);
+  backdrop-filter: blur(12px);
 }
 
-.codim-section-light {
-  background-color: #f8f9fa;
-  color: #212529;
-}
-
-.codim-section-dark {
-  background-color: transparent;
+.codim-navbar .navbar-brand {
+  font-family: var(--font-orbitron, "Orbitron"), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
   color: var(--codim-white);
 }
 
-.codim-page-container {
-  max-width: 960px;
-}
-
-.codim-page-title {
-  font-size: clamp(2rem, 3vw, 2.6rem);
-  font-weight: 700;
-  margin-bottom: 0.75rem;
+.codim-nav-link {
+  color: var(--codim-gray-light);
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  font-family: var(--font-orbitron, "Orbitron"), "Inter", sans-serif;
 }
 
-.codim-page-subtitle {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.65);
-  margin-bottom: 2rem;
+.codim-nav-link.active {
+  color: var(--codim-white);
+  position: relative;
 }
 
-.codim-card {
-  border-radius: 0.75rem;
-  border: 1px solid var(--codim-border);
-  background: var(--codim-gray-100);
-  backdrop-filter: saturate(140%) blur(8px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+.codim-nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0.1rem;
+  height: 2px;
+  background: var(--codim-red);
 }
 
-.codim-card-light {
-  border-radius: 0.75rem;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  background: #ffffff;
-  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+.codim-section {
+  padding: 3.5rem 0;
+}
+
+.codim-section-light {
+  background: var(--codim-gray-light);
+  color: var(--codim-black);
+}
+
+.codim-section-dark {
+  background: transparent;
+}
+
+.codim-page-container {
+  max-width: 1000px;
 }
 
 .codim-section-heading {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(224, 224, 224, 0.8);
+}
+
+.codim-page-title {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--codim-white);
+  font-family: var(--font-orbitron, "Orbitron"), sans-serif;
+}
+
+.codim-page-subtitle {
+  color: rgba(224, 224, 224, 0.75);
+}
+
+.codim-card {
+  border-radius: 1rem;
+  border: 1px solid var(--codim-border);
+  background: var(--codim-gray);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+}
+
+.codim-card-light {
+  border-radius: 1rem;
+  background: var(--codim-gray-light);
+  color: var(--codim-black);
 }
 
 .codim-btn-primary {
-  background: var(--codim-primary);
-  border-color: var(--codim-primary);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-  border-radius: var(--codim-radius-lg);
-  padding: 0.85rem 1.75rem;
+  background: var(--codim-red);
+  border-color: transparent;
+  color: var(--codim-white);
 }
 
 .codim-btn-primary:hover {
-  filter: brightness(1.1);
-}
-
-.codim-btn-primary.codim-cta-pulse {
-  animation: codimPulse 2.8s ease-in-out infinite;
-  box-shadow: 0 0 0 rgba(217, 4, 41, 0.4);
+  background: rgba(217, 4, 41, 0.85);
 }
 
 .codim-btn-secondary {
-  border-radius: var(--codim-radius-lg);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  border-color: rgba(255, 255, 255, 0.35);
+  border-color: rgba(224, 224, 224, 0.4);
   color: var(--codim-white);
-  padding: 0.85rem 1.75rem;
 }
 
 .codim-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.5);
+  border-color: var(--codim-white);
+  background: rgba(224, 224, 224, 0.1);
+}
+
+.codim-btn-primary.codim-cta-pulse {
+  animation: codimPulse 2.6s ease-in-out infinite;
+  box-shadow: 0 0 0 rgba(217, 4, 41, 0.35);
 }
 
 .codim-reveal {
   opacity: 0;
   transform: translateY(24px);
-  animation: codimFadeUp 0.8s ease forwards;
 }
 
-.codim-reveal:nth-of-type(2) {
-  animation-delay: 0.12s;
-}
-
-.codim-reveal:nth-of-type(3) {
-  animation-delay: 0.24s;
+.codim-reveal.is-visible {
+  animation: codimFadeUp 0.9s ease forwards;
 }
 
 .codim-hero {
   position: relative;
   overflow: hidden;
-  background: linear-gradient(140deg, var(--codim-black), #161616 65%);
+  background: linear-gradient(130deg, var(--codim-black), var(--codim-gray));
 }
 
 .codim-hero::after {
@@ -175,8 +223,7 @@ a {
   position: absolute;
   inset: 0;
   background: radial-gradient(circle at 20% 20%, rgba(217, 4, 41, 0.35), transparent 45%),
-    radial-gradient(circle at 80% 10%, rgba(255, 255, 255, 0.08), transparent 40%);
-  opacity: 0.8;
+    radial-gradient(circle at 80% 10%, rgba(224, 224, 224, 0.1), transparent 40%);
   pointer-events: none;
 }
 
@@ -186,77 +233,164 @@ a {
 }
 
 .codim-hero__title {
-  font-family: var(--font-orbitron, "Orbitron"), "Inter", sans-serif;
+  font-family: var(--font-orbitron, "Orbitron"), sans-serif;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: clamp(2.8rem, 6vw, 4rem);
-  line-height: 1.1;
+  color: var(--codim-white);
 }
 
 .codim-hero__subtitle {
-  font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.75);
-  max-width: 540px;
+  color: rgba(224, 224, 224, 0.8);
 }
 
 .codim-hero__stat {
-  border-radius: var(--codim-radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 1.15rem;
-  text-align: center;
-  background: rgba(10, 10, 10, 0.65);
+  border-radius: 1rem;
+  border: 1px solid rgba(224, 224, 224, 0.15);
+  background: rgba(17, 17, 17, 0.9);
+  text-transform: uppercase;
 }
 
 .codim-hero__stat h3 {
   font-family: var(--font-orbitron, "Orbitron"), sans-serif;
-  font-size: 1.8rem;
   margin-bottom: 0.35rem;
-  text-transform: uppercase;
-}
-
-.codim-hero__stat p {
-  margin: 0;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
 }
 
 .codim-service-card {
-  border-radius: var(--codim-radius-lg);
-  background: var(--codim-gray-100);
-  padding: 1.75rem;
-  border: 1px solid var(--codim-border);
-  height: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  border: 1px solid rgba(224, 224, 224, 0.1);
+  background: rgba(17, 17, 17, 0.9);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .codim-service-card:hover {
   transform: translateY(-6px);
+  border-color: rgba(217, 4, 41, 0.8);
   box-shadow: 0 15px 30px rgba(217, 4, 41, 0.25);
-  border-color: rgba(217, 4, 41, 0.5);
 }
 
 .codim-service-icon {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 14px;
-  background: rgba(217, 4, 41, 0.12);
+  background: rgba(217, 4, 41, 0.15);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.5rem;
+  color: var(--codim-white);
   margin-bottom: 1rem;
 }
 
-.codim-services-grid h2 {
-  font-family: var(--font-orbitron, "Orbitron"), sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.codim-project-card {
+  border-radius: 1rem;
+  border: 1px solid rgba(224, 224, 224, 0.1);
+  background: var(--codim-gray);
+  overflow: hidden;
+  transition: transform 0.35s ease, border-color 0.35s ease;
 }
 
-.codim-services-grid p {
-  color: rgba(255, 255, 255, 0.7);
+.codim-project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(217, 4, 41, 0.8);
+}
+
+.codim-project-media {
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(
+    160deg,
+    rgba(217, 4, 41, 0.6),
+    rgba(17, 17, 17, 0.9)
+  );
+  border-bottom: 1px solid rgba(224, 224, 224, 0.1);
+}
+
+.codim-project-meta {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(224, 224, 224, 0.7);
+}
+
+.codim-filter-pill {
+  border-radius: 999px;
+  border: 1px solid rgba(224, 224, 224, 0.2);
+  padding: 0.4rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.codim-filter-pill.active {
+  background: var(--codim-red);
+  border-color: var(--codim-red);
+  color: var(--codim-white);
+}
+
+.codim-timeline {
+  border-left: 2px solid rgba(224, 224, 224, 0.2);
+  padding-left: 1.5rem;
+}
+
+.codim-timeline-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.codim-timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.75rem;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--codim-red);
+}
+
+.codim-input {
+  background: rgba(17, 17, 17, 0.9);
+  border: 1px solid rgba(224, 224, 224, 0.2);
+  color: var(--codim-white);
+  border-radius: 0.75rem;
+  padding: 0.85rem 1rem;
+}
+
+.codim-input:focus {
+  border-color: var(--codim-red);
+  box-shadow: none;
+  color: var(--codim-white);
+  background: rgba(26, 26, 26, 0.95);
+}
+
+.codim-form-step {
+  border: 1px solid rgba(224, 224, 224, 0.15);
+  border-radius: 1rem;
+  padding: 2rem;
+  background: rgba(17, 17, 17, 0.85);
+}
+
+.codim-alert {
+  border-radius: 0.75rem;
+  border: 1px solid rgba(224, 224, 224, 0.2);
+  padding: 1rem;
+  color: var(--codim-white);
+  background: rgba(26, 26, 26, 0.9);
+}
+
+.codim-alert-success {
+  border-color: rgba(224, 224, 224, 0.3);
+  background: rgba(26, 26, 26, 0.95);
+}
+
+.codim-alert-error {
+  border-color: rgba(217, 4, 41, 0.8);
+  background: rgba(217, 4, 41, 0.2);
+}
+
+.codim-cta {
+  border-radius: 1.25rem;
+  border: 1px solid rgba(224, 224, 224, 0.1);
+  background: linear-gradient(120deg, var(--codim-black), var(--codim-gray));
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
 }
 
 @keyframes codimFadeUp {
@@ -275,5 +409,15 @@ a {
   }
   100% {
     box-shadow: 0 0 0 0 rgba(217, 4, 41, 0);
+  }
+}
+
+@media (max-width: 768px) {
+  .codim-main {
+    padding-top: 1rem;
+  }
+
+  .codim-page-container {
+    max-width: 100%;
   }
 }
