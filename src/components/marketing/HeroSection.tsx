@@ -4,15 +4,15 @@ import Link from "next/link";
 import { Button, Card, Col, Container, Row, Stack } from "react-bootstrap";
 
 const heroStats = [
-  { value: "40+", label: "Projetos em producao" },
-  { value: "8x", label: "ROI medio dos clientes" },
-  { value: "24h", label: "Tempo ate primeiros entregaveis" },
+  { value: "40+", label: "Projetos em produção" },
+  { value: "8x", label: "ROI médio dos clientes" },
+  { value: "24h", label: "Tempo até os primeiros entregáveis" },
 ];
 
 const heroHighlights = [
   "Sistemas customizados do zero",
-  "Automacoes e bots de operacao",
-  "Integracoes com APIs estrategicas",
+  "Automações e bots de operação",
+  "Integrações com APIs estratégicas",
 ];
 
 export function HeroSection() {
@@ -21,12 +21,12 @@ export function HeroSection() {
       <Container className="codim-hero__content position-relative">
         <Row className="align-items-center g-5">
           <Col lg={7} className="codim-reveal">
-            <p className="codim-section-heading mb-3">Codim • Startup Tech</p>
-            <h1 className="codim-hero__title mb-4">Codigo com proposito.</h1>
+            <p className="codim-section-heading mb-3">Codim • Tech Studio</p>
+            <h1 className="codim-hero__title mb-4">Código com propósito.</h1>
             <p className="codim-hero__subtitle mb-4">
-              Transformamos ideias em produtos digitais escalaveis, combinando
-              desenvolvimento, automacao e design para acelerar o crescimento do
-              seu negocio.
+              Transformamos ideias em produtos digitais escaláveis, combinando
+              desenvolvimento, automação e design para acelerar o crescimento do
+              seu negócio.
             </p>
             <div className="d-flex flex-wrap gap-3 mb-4">
               <Button
@@ -69,21 +69,15 @@ export function HeroSection() {
           <Col lg={5} className="codim-reveal">
             <Card className="codim-card border-0 text-white">
               <Card.Body>
-                <p className="text-uppercase small mb-2">
-                  Visao rapida
-                </p>
+                <p className="text-uppercase small mb-2">Visão rápida</p>
                 <h2 className="h4 text-uppercase mb-4">
-                  Operacao, automacao e produto em uma mesma mesa.
+                  Operação, automação e produto em uma mesma mesa.
                 </h2>
                 <ul className="list-unstyled mb-4 small">
-                  <li className="mb-2">• Planejamento tecnico e visual</li>
-                  <li className="mb-2">
-                    • Execucao enxuta com ciclos semanais
-                  </li>
-                  <li className="mb-2">• Squad flexivel e orientado a dados</li>
-                  <li className="mb-0">
-                    • Contratos e propostas dentro da plataforma
-                  </li>
+                  <li className="mb-2">• Planejamento técnico e visual</li>
+                  <li className="mb-2">• Execução enxuta com ciclos semanais</li>
+                  <li className="mb-2">• Squad flexível e orientado a dados</li>
+                  <li className="mb-0">• Contratos e propostas na plataforma</li>
                 </ul>
                 <Row className="g-3">
                   {heroStats.map((stat) => (

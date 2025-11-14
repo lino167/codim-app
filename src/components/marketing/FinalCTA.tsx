@@ -9,14 +9,14 @@ export function FinalCTA() {
       <Container>
         <div className="codim-cta p-4 p-lg-5 codim-reveal">
           <p className="codim-section-heading mb-2">
-            Chamado para quem quer ir alem
+            Chamado para quem quer ir além
           </p>
           <h2 className="codim-page-title mb-3">
-            Vamos criar algo incrivel juntos?
+            Vamos criar algo incrível juntos?
           </h2>
           <p className="codim-page-subtitle mb-4">
             Estruture seu projeto com briefing guiado, proposta transparente e
-            execucao tech de ponta a ponta.
+            execução tech de ponta a ponta.
           </p>
           <Button
             as={Link}
@@ -24,7 +24,7 @@ export function FinalCTA() {
             className="codim-btn-primary codim-cta-pulse"
             bsPrefix="codim-btn"
           >
-            Comecar um projeto
+            Começar um projeto
           </Button>
         </div>
       </Container>

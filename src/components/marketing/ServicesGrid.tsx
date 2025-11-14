@@ -7,25 +7,25 @@ const services = [
   {
     title: "Desenvolvimento Web",
     description:
-      "Produtos digitais criados do zero com arquitetura escalavel e foco em manutencao simples.",
+      "Produtos digitais criados do zero com arquitetura escalável e foco em manutenção simples.",
     Icon: Code2,
   },
   {
     title: "Automacao e Bots",
     description:
-      "Fluxos automatizados, robos operacionais e integracoes que reduzem trabalho manual.",
+      "Fluxos automatizados, robôs operacionais e integrações que reduzem trabalho manual.",
     Icon: Bot,
   },
   {
     title: "Integracoes e APIs",
     description:
-      "Conecte ERPs, CRMs e ferramentas proprietarias com pipelines seguros e observaveis.",
+      "Conecte ERPs, CRMs e ferramentas proprietárias com pipelines seguros e observáveis.",
     Icon: Link2,
   },
   {
     title: "UX/UI Design",
     description:
-      "Experiencias visuais alinhadas ao negocio com processos colaborativos e iterativos.",
+      "Experiências visuais alinhadas ao negócio com processos colaborativos e iterativos.",
     Icon: PenTool,
   },
 ];
@@ -36,12 +36,12 @@ export function ServicesGrid() {
       <Container>
         <Row className="mb-4 codim-reveal">
           <Col md={8}>
-            <p className="codim-section-heading mb-2">Servicos</p>
+            <p className="codim-section-heading mb-2">Serviços</p>
             <h2 className="mb-3">O que a Codim entrega</h2>
             <p>
-              Mais do que uma landing page: operacao completa, de integracoes a
-              automacoes e experiencia visual. Cada card pode evoluir para um
-              modulo do seu produto.
+              Mais do que uma landing page: operação completa, de integrações a
+              automações e experiência visual. Cada card pode evoluir para um
+              módulo do seu produto.
             </p>
           </Col>
         </Row>

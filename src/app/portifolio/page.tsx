@@ -16,7 +16,7 @@ type Project = {
 const projects: Project[] = [
   {
     title: "Atlas Ops",
-    problem: "Squads sem visao consolidada dos fluxos diarios.",
+    problem: "Squads sem visão consolidada dos fluxos diários.",
     solution:
       "Plataforma modular com dashboards, rotinas automatizadas e alertas.",
     stack: ["Next.js", "Supabase", "Stripe"],
@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: "Pulse CRM",
     problem: "Pipeline B2B descentralizado e com retrabalho.",
     solution:
-      "CRM minimalista com integracao a bots e playbooks versionados.",
+      "CRM minimalista com integração a bots e playbooks versionados.",
     stack: ["React", "Node", "Postgres"],
     technologies: ["React", "Node"],
   },
@@ -34,13 +34,13 @@ const projects: Project[] = [
     title: "Neon Dash",
     problem: "Indicadores dispersos entre planilhas e scripts.",
     solution:
-      "Dashboard realtime com jobs em Python e notificacoes inteligentes.",
+      "Dashboard em tempo real com jobs em Python e notificações inteligentes.",
     stack: ["Next.js", "Python", "Supabase"],
     technologies: ["Python", "React"],
   },
   {
     title: "Cortex API",
-    problem: "Integracoes entre ERPs e SaaS com atrasos e falhas.",
+    problem: "Integrações entre ERPs e SaaS com atrasos e falhas.",
     solution:
       "Gateway GraphQL com filas resilientes e observabilidade completa.",
     stack: ["Node", "GraphQL", "Redis"],
@@ -48,9 +48,9 @@ const projects: Project[] = [
   },
   {
     title: "Nova AI Ops",
-    problem: "Bots isolados sem camada de orquestracao central.",
+    problem: "Bots isolados sem camada de orquestração central.",
     solution:
-      "Console unico com prompt library, agendador e auditoria de automacoes.",
+      "Console único com prompt library, agendador e auditoria de automações.",
     stack: ["React", "Python", "Supabase"],
     technologies: ["React", "Python"],
   },
@@ -80,8 +80,8 @@ export default function PortifolioPage() {
     <PageShell>
       <PageHeader
         kicker="Projetos"
-        title="Produtos digitais com proposito"
-        subtitle="Cases selecionados de SaaS, automacoes e plataformas internas desenvolvidas pela Codim."
+        title="Produtos digitais com propósito"
+        subtitle="Cases selecionados de SaaS, automações e plataformas internas desenvolvidas pela Codim."
       />
 
       <Stack direction="horizontal" gap={2} className="flex-wrap mb-4">
@@ -113,7 +113,7 @@ export default function PortifolioPage() {
                 </div>
                 <p className="mb-1 text-uppercase small">Problema</p>
                 <p>{project.problem}</p>
-                <p className="mb-1 text-uppercase small">Solucao</p>
+                <p className="mb-1 text-uppercase small">Solução</p>
                 <p>{project.solution}</p>
                 <p className="mb-1 text-uppercase small">Stack</p>
                 <div className="d-flex flex-wrap gap-2 mb-3">

@@ -8,19 +8,19 @@ const services = [
   {
     title: "Desenvolvimento Web Sob Medida",
     description:
-      "Aplicacoes full stack com App Router, Supabase, automatizacoes e observabilidade.",
+      "Aplicações full stack com App Router, Supabase, automações e observabilidade.",
     duration: "6-12 semanas",
     stack: ["Next.js", "Supabase", "Node"],
   },
   {
-    title: "Automacao e Bots Operacionais",
+    title: "Automação e Bots Operacionais",
     description:
       "Fluxos com workers, integrações a APIs e processos que eliminam retrabalho manual.",
     duration: "4-8 semanas",
     stack: ["Python", "Node", "Supabase"],
   },
   {
-    title: "Integracoes e APIs",
+    title: "Integrações e APIs",
     description:
       "Camadas de APIs com autenticação, monitoramento e pipelines de dados entre ERPs e SaaS.",
     duration: "5-10 semanas",
@@ -29,7 +29,7 @@ const services = [
   {
     title: "UX/UI Design Operacional",
     description:
-      "Design systems minimalistas, prototipos navegaveis e guias de implementacao.",
+      "Design systems minimalistas, protótipos navegáveis e guias de implementação.",
     duration: "2-5 semanas",
     stack: ["Figma", "Inter", "Orbitron"],
   },
@@ -39,9 +39,9 @@ export default function ServicosPage() {
   return (
     <PageShell>
       <PageHeader
-        kicker="Servicos"
+        kicker="Serviços"
         title="Como a Codim entrega"
-        subtitle="Cada engagement possui briefing guiado, rota de execucao e acompanhamento semanal."
+        subtitle="Cada parceria possui briefing guiado, rota de execução e acompanhamento semanal."
       />
       <Row className="g-4">
         {services.map((service) => (
@@ -61,7 +61,7 @@ export default function ServicosPage() {
                 ))}
               </div>
               <button type="button" className="codim-btn-primary codim-btn w-100">
-                Briefing rapido
+                Briefing rápido
               </button>
             </Card>
           </Col>

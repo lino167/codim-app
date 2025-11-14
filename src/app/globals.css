@@ -170,6 +170,7 @@ a {
   background: var(--codim-gray);
   backdrop-filter: blur(16px);
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  color: var(--codim-gray-light);
 }
 
 .codim-card-light {
@@ -260,6 +261,7 @@ a {
   border: 1px solid rgba(224, 224, 224, 0.1);
   background: rgba(17, 17, 17, 0.9);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  color: var(--codim-gray-light);
 }
 
 .codim-service-card:hover {
@@ -286,6 +288,7 @@ a {
   background: var(--codim-gray);
   overflow: hidden;
   transition: transform 0.35s ease, border-color 0.35s ease;
+  color: var(--codim-gray-light);
 }
 
 .codim-project-card:hover {

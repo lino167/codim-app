@@ -42,7 +42,7 @@ export function WaitlistForm() {
     mutationFn: async (values: WaitlistFormValues) => {
       if (!supabase) {
         throw new Error(
-          "Supabase nao configurado. Adicione as variaveis de ambiente para ativar o formulario.",
+          "Supabase não configurado. Adicione as variáveis de ambiente para ativar o formulário.",
         );
       }
 
@@ -71,7 +71,7 @@ export function WaitlistForm() {
     return (
       <div className="codim-alert codim-alert-error">
         Configure NEXT_PUBLIC_SUPABASE_URL e NEXT_PUBLIC_SUPABASE_ANON_KEY no
-        .env.local para habilitar o formulario.
+        .env.local para habilitar o formulário.
       </div>
     );
   }
@@ -129,7 +129,7 @@ export function WaitlistForm() {
           <Form.Control
             as="textarea"
             rows={4}
-            placeholder="Conte como voce orquestra dados, squads e rotinas hoje."
+            placeholder="Conte como você orquestra dados, squads e rotinas hoje."
             className="codim-input"
             isInvalid={Boolean(errors.painPoint)}
             {...register("painPoint")}
@@ -164,7 +164,7 @@ export function WaitlistForm() {
         {waitlistMutation.isError && (
           <div className="codim-alert codim-alert-error">
             {waitlistMutation.error?.message ||
-              "Nao foi possivel registrar agora. Tente novamente em instantes."}
+              "Não foi possível registrar agora. Tente novamente em instantes."}
           </div>
         )}
       </Stack>

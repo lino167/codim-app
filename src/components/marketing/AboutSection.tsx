@@ -7,17 +7,17 @@ const pillars = [
   {
     title: "Velocidade",
     description:
-      "Operamos em ciclos curtos para entregar as primeiras telas e automacoes em dias, nao semanas.",
+      "Operamos em ciclos curtos para entregar as primeiras telas e automações em dias, não semanas.",
     Icon: Zap,
   },
   {
-    title: "Precisao",
+    title: "Precisão",
     description:
-      "Arquiteturas claras, stack opinativa e rastreabilidade de cada decisao tecnica.",
+      "Arquiteturas claras, stack opinativa e rastreabilidade de cada decisão técnica.",
     Icon: Target,
   },
   {
-    title: "Automacao",
+    title: "Automação",
     description:
       "Bots e integrações que eliminam tarefas manuais enquanto preservam contexto operacional.",
     Icon: Cpu,
@@ -31,16 +31,16 @@ export function AboutSection() {
         <Row className="g-5 align-items-center">
           <Col lg={6} className="codim-reveal">
             <p className="codim-section-heading mb-2">Sobre a Codim</p>
-            <h2 className="codim-page-title">Misso e proposito</h2>
+            <h2 className="codim-page-title">Missão e propósito</h2>
             <p className="codim-page-subtitle">
               Somos um tech studio que une desenvolvimento sob medida e
-              automacoes para tirar ideias do papel com clareza, foco e
-              mensuracao constante.
+              automações para tirar ideias do papel com clareza, foco e
+              mensuração constante.
             </p>
             <p>
-              Cada projeto recebe uma estrutura modular: discovery rapido,
-              arquitetura codificada e rota de evolucao continua. Nenhum
-              entregavel e generico; tudo eh pensado para o processo real do
+              Cada projeto recebe uma estrutura modular: discovery rápido,
+              arquitetura codificada e rota de evolução contínua. Nenhum
+              entregável é genérico; tudo é pensado para o processo real do
               cliente.
             </p>
           </Col>

@@ -6,12 +6,12 @@ const projects = [
   {
     title: "Atlas Ops",
     stack: ["Next.js", "Supabase", "Stripe"],
-    description: "Portal completo para squads de operacao criarem rotinas e fluxos.",
+    description: "Portal completo para squads de operação criarem rotinas e fluxos.",
   },
   {
     title: "Pulse CRM",
     stack: ["React", "Node", "Postgres"],
-    description: "CRM enxuto com automacoes e playbooks dinamicos para vendas B2B.",
+    description: "CRM enxuto com automações e playbooks dinâmicos para vendas B2B.",
   },
   {
     title: "Neon Dash",
@@ -26,12 +26,12 @@ const projects = [
   {
     title: "Nova AI Ops",
     stack: ["React", "Python", "Supabase"],
-    description: "Console para modelos de IA com automacao de tarefas repetitivas.",
+    description: "Console para modelos de IA com automação de tarefas repetitivas.",
   },
   {
     title: "Orbit Desk",
     stack: ["Next.js", "Supabase", "LangChain"],
-    description: "Help desk proativo com bots que analisam contexto do cliente.",
+    description: "Help desk proativo com bots que analisam o contexto do cliente.",
   },
 ];
 
@@ -44,8 +44,8 @@ export function ProjectsShowcase() {
             <p className="codim-section-heading mb-2">Projetos recentes</p>
             <h2 className="codim-page-title">Produtos e plataformas</h2>
             <p>
-              De portais operacionais a integrações criticas, cada entrega da
-              Codim nasce com o lema Codigo com proposito.
+              De portais operacionais a integrações críticas, cada entrega da
+              Codim nasce com o lema Código com propósito.
             </p>
           </Col>
         </Row>

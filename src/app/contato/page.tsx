@@ -22,7 +22,7 @@ type BriefingValues = z.infer<typeof briefingSchema>;
 
 const steps = [
   {
-    title: "Quem voce e",
+    title: "Quem você é",
     fields: ["fullName", "email", "company"] as const,
   },
   {
@@ -66,7 +66,7 @@ export default function ContatoPage() {
     }
   }
 
-  async function prevStep() {
+  function prevStep() {
     setCurrentStep((prev) => Math.max(prev - 1, 0));
   }
 
@@ -81,7 +81,7 @@ export default function ContatoPage() {
       <PageHeader
         kicker="Briefing"
         title="Contato direto com a Codim"
-        subtitle="Multi-step simples para entender seu projeto. Respondemos em ate 24h com os proximos passos."
+        subtitle="Multi-step simples para entender seu projeto. Respondemos em até 24h com os próximos passos."
       />
 
       <Form onSubmit={handleSubmit(onSubmit)} className="codim-form-step">
@@ -140,7 +140,7 @@ export default function ContatoPage() {
                 <Form.Label>Tipo de projeto</Form.Label>
                 <Form.Control
                   className="codim-input"
-                  placeholder="SaaS, painel, automacao..."
+                  placeholder="SaaS, painel, automação..."
                   isInvalid={Boolean(errors.projectType)}
                   {...register("projectType")}
                 />
@@ -183,7 +183,7 @@ export default function ContatoPage() {
               as="textarea"
               rows={5}
               className="codim-input"
-              placeholder="Quais dores voce quer resolver? Quais sistemas se conectam?"
+              placeholder="Quais dores você quer resolver? Quais sistemas se conectam?"
               isInvalid={Boolean(errors.description)}
               {...register("description")}
             />
@@ -211,7 +211,7 @@ export default function ContatoPage() {
               className="codim-btn-primary"
               onClick={nextStep}
             >
-              Proximo
+              Próximo
             </Button>
           )}
           {currentStep === steps.length - 1 && (
@@ -227,7 +227,7 @@ export default function ContatoPage() {
 
         {submitted && (
           <div className="codim-alert codim-alert-success mt-4">
-            Recebemos o briefing de {submitted.fullName}. Responderemos em ate
+            Recebemos o briefing de {submitted.fullName}. Responderemos em até
             24h no e-mail {submitted.email}.
           </div>
         )}
