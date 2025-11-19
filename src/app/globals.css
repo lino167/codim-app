@@ -257,16 +257,39 @@ a {
   color: rgba(224, 224, 224, 0.8);
 }
 
+.codim-hero__stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 1rem;
+}
+
 .codim-hero__stat {
   border-radius: 1rem;
   border: 1px solid rgba(224, 224, 224, 0.15);
   background: rgba(17, 17, 17, 0.9);
   text-transform: uppercase;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 120px;
+  gap: 0.25rem;
 }
 
 .codim-hero__stat h3 {
   font-family: var(--font-orbitron, 'Orbitron'), sans-serif;
   margin-bottom: 0.35rem;
+  color: var(--codim-red);
+  font-size: 1.75rem;
+}
+
+.codim-hero__stat p {
+  letter-spacing: 0.08em;
+  color: rgba(224, 224, 224, 0.75);
+  margin: 0;
+  font-size: 0.8rem;
 }
 
 .codim-service-card {

@@ -79,16 +79,14 @@ export function HeroSection() {
                   <li className="mb-2">• Squad flexível e orientado a dados</li>
                   <li className="mb-0">• Contratos e propostas na plataforma</li>
                 </ul>
-                <Row className="g-3">
+                <div className="codim-hero__stats-grid">
                   {heroStats.map((stat) => (
-                    <Col xs={4} key={stat.label}>
-                      <div className="codim-hero__stat">
-                        <h3>{stat.value}</h3>
-                        <p>{stat.label}</p>
-                      </div>
-                    </Col>
+                    <article key={stat.label} className="codim-hero__stat">
+                      <h3>{stat.value}</h3>
+                      <p>{stat.label}</p>
+                    </article>
                   ))}
-                </Row>
+                </div>
               </Card.Body>
             </Card>
           </Col>
