@@ -5,6 +5,7 @@ import "./globals.css";
 import { AppProviders } from "@/components/providers/AppProviders";
 import { CodimNavbar } from "@/components/layout/CodimNavbar";
 import { CodimFooter } from "@/components/layout/CodimFooter";
+import { AtomsBackground } from "@/components/layout/AtomsBackground";
 
 const orbitron = Orbitron({
   subsets: ["latin"],
@@ -33,6 +34,9 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body className={`${orbitron.variable} ${inter.variable} codim-body`}>
+        <div className="codim-atoms-layer">
+          <AtomsBackground />
+        </div>
         <AppProviders>
           <div className="codim-app">
             <CodimNavbar />
