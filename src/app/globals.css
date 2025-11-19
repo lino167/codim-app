@@ -17,7 +17,7 @@
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: var(--font-inter, "Inter"), "Segoe UI", system-ui, -apple-system,
+  font-family: var(--font-inter, 'Inter'), 'Segoe UI', system-ui, -apple-system,
     BlinkMacSystemFont, sans-serif;
   line-height: 1.6;
   background-color: var(--codim-black);
@@ -58,24 +58,24 @@ a {
 
 .codim-body {
   position: relative;
-  background: radial-gradient(circle at top left, rgba(217, 4, 41, 0.2), transparent 45%),
+  background: radial-gradient(
+      circle at top left,
+      rgba(217, 4, 41, 0.2),
+      transparent 45%
+    ),
     radial-gradient(circle at 80% 0%, rgba(217, 4, 41, 0.12), transparent 55%),
     linear-gradient(180deg, var(--codim-black), var(--codim-gray-dark));
 }
 
 .codim-body::before {
-  content: "";
+  content: '';
   position: fixed;
   inset: 0;
   background-image: linear-gradient(
       rgba(224, 224, 224, 0.03) 1px,
       transparent 1px
     ),
-    linear-gradient(
-      90deg,
-      rgba(224, 224, 224, 0.03) 1px,
-      transparent 1px
-    );
+    linear-gradient(90deg, rgba(224, 224, 224, 0.03) 1px, transparent 1px);
   background-size: 140px 140px;
   opacity: 0.4;
   pointer-events: none;
@@ -100,7 +100,7 @@ a {
 }
 
 .codim-navbar .navbar-brand {
-  font-family: var(--font-orbitron, "Orbitron"), sans-serif;
+  font-family: var(--font-orbitron, 'Orbitron'), sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   color: var(--codim-white);
@@ -112,13 +112,18 @@ a {
   letter-spacing: 0.08em;
 }
 
+.codim-nav-link:hover {
+  color: var(--codim-red) !important;
+}
+
 .codim-nav-link.active {
-  color: var(--codim-white);
+  color: var(--codim-red) !important;
+  font-weight: 700;
   position: relative;
 }
 
 .codim-nav-link.active::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   right: 0;
@@ -157,7 +162,7 @@ a {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--codim-white);
-  font-family: var(--font-orbitron, "Orbitron"), sans-serif;
+  font-family: var(--font-orbitron, 'Orbitron'), sans-serif;
 }
 
 .codim-page-subtitle {
@@ -220,11 +225,19 @@ a {
 }
 
 .codim-hero::after {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 20% 20%, rgba(217, 4, 41, 0.35), transparent 45%),
-    radial-gradient(circle at 80% 10%, rgba(224, 224, 224, 0.1), transparent 40%);
+  background: radial-gradient(
+      circle at 20% 20%,
+      rgba(217, 4, 41, 0.35),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 80% 10%,
+      rgba(224, 224, 224, 0.1),
+      transparent 40%
+    );
   pointer-events: none;
 }
 
@@ -234,7 +247,7 @@ a {
 }
 
 .codim-hero__title {
-  font-family: var(--font-orbitron, "Orbitron"), sans-serif;
+  font-family: var(--font-orbitron, 'Orbitron'), sans-serif;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--codim-white);
@@ -252,7 +265,7 @@ a {
 }
 
 .codim-hero__stat h3 {
-  font-family: var(--font-orbitron, "Orbitron"), sans-serif;
+  font-family: var(--font-orbitron, 'Orbitron'), sans-serif;
   margin-bottom: 0.35rem;
 }
 
@@ -339,7 +352,7 @@ a {
 }
 
 .codim-timeline-item::before {
-  content: "";
+  content: '';
   position: absolute;
   left: -1.75rem;
   top: 0.4rem;
